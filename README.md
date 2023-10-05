@@ -1,5 +1,5 @@
 <h1>Description</h1>
-<p>This repository contains scripts I wrote in the ALX Africa-Holberton Full Stack Engineering Program.</p>
+<p>This repository contains scripts I wrote in the ALX Africa-Holberton Full Stack Software Engineering Program.</p>
 
 <h2>Project names in completion order:</h2>
 
