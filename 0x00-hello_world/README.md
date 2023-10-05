@@ -2,9 +2,9 @@
 
 <p>This directory contains bash scripts that I wrote under <em>Project 0x00. C - Hello, World</em>.</p>
 
-<p>This directory and its parent repository documents my first introduction to the C programming language</p>
+<p>It and its parent repository document my foray into the C programming language</p>
 
-<p>Here is an explanation of what each script does:</p>
+<p>Here is an explanation of what each script does.</p>
 
 <h2>0-preprocessor</h2>
 
