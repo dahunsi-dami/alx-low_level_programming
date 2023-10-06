@@ -4,8 +4,8 @@ read -p "Enter the file name: " filename
 
 # Ensure the file exists
 if [ -f "$filename" ]; then
-    chmod +x "$filename"
-    "./$filename"
+#    chmod +x "$filename"
+#    "./$filename"
     
     read -p "Enter Commit message: " commit
     # After running the script, commit and push changes
