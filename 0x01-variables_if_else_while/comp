@@ -1,0 +1,9 @@
+#!/bin/bash
+
+read -p "Enter filname: " filename
+
+#Ensure filename exists
+if [ -f "$filename" ]; then
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 "$filename"
+
+fi
