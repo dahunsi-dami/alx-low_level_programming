@@ -19,25 +19,20 @@ int main(void)
 {
 	int s;
 	int c;
-	int f;
 
-	for (s = '0'; s < '9'; s++)
+	for (s = 0; s <= 98; s++)
 	{
-		for (c = s + 1; c <= '9'; c++)
+		for (c = s + 1; c <= 98; c++)
 		{
-			for (f = c + 1; f <= '9'; f++)
-			{
-				if ((s != c) != f)
-				{
-					putchar(s);
-					putchar(c);
-					putchar(f);
-					if (s == '7' && c == '8')
-					continue;
-					putchar(',');
-					putchar(' ');
-				}
-			}
+			putchar((s / 10) = '0');
+			putchar((s % 10) + '0');
+			putchar (' ');
+			putchar((c / 10) = '0');
+			putchar((c % 10) + '0');
+			if (s == 98 && c == 98)
+			continue;
+			putchar(',');
+			putchar(' ');
 		}
 	}
 
