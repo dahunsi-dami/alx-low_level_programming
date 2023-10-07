@@ -15,26 +15,24 @@
  */
 int main(void)
 {
-	int s;
+	int s = 0;
 	int c;
 
 	while (s <= 99)
 	{
-		c = s;
+		c = s + 1;
 		while (c <= 99)
 		{
-			if (c != s)
+			putchar((s / 10) + '0');
+			putchar((s % 10) + '0');
+			putchar (' ');
+			putchar(c / 10) + '0');
+			putchar((c % 10) + '0');
+
+			if (s != 98 || c != 99)
 			{
-				putchar((s / 10) + 48);
-				putchar((s % 10) + 48);
-				putchar (' ');
-				putchar(c / 10) + 48);
-				putchar((c % 10) + 48);
-				if (s != 98 || c != 99)
-				{
-					putchar(',');
-					putchar(' ');
-				}
+				putchar(',');
+				putchar(' ');
 			}
 			++c;
 		}
