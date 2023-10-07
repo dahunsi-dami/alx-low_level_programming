@@ -24,15 +24,18 @@ int main(void)
 	{
 		for (c = s + 1; c <= 98; c++)
 		{
-			putchar((s /= 10) = '0');
-			putchar((s % 10) + '0');
-			putchar (' ');
-			putchar((c /= 10) = '0');
-			putchar((c % 10) + '0');
-			if (s == 98 && c == 98)
-			continue;
-			putchar(',');
-			putchar(' ');
+			int s_temp = s /= 10;
+            		int c_temp = c /= 10;
+
+            		putchar(s_temp + '0');
+            		putchar((s % 10) + '0');
+            		putchar (' ');
+            		putchar(c_temp + '0');
+            		putchar((c % 10) + '0');
+            		if (s == 98 && c == 98)
+            		continue;
+            		putchar(',');
+            		putchar(' ');
 		}
 	}
 
