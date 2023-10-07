@@ -6,10 +6,10 @@
 /* betty style doc for function main goes there */
 
 /**
- * main - print all possible combinations of three digits
+ * main - print all possible combinations of two digits
  *
  * Description: numbers separated by comma in ascending order.
- * Three digits must differ, and combinations shouldn't be repeated.
+ * Two digits must differ, and a combinations shouldn't be repeated.
  *
  * Use putchar function only.
  *
