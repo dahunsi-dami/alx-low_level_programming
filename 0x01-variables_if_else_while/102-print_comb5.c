@@ -24,10 +24,10 @@ int main(void)
 	{
 		for (c = s + 1; c <= 98; c++)
 		{
-			putchar((s / 10) = '0');
+			putchar((s /= 10) = '0');
 			putchar((s % 10) + '0');
 			putchar (' ');
-			putchar((c / 10) = '0');
+			putchar((c /= 10) = '0');
 			putchar((c % 10) + '0');
 			if (s == 98 && c == 98)
 			continue;
