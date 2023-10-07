@@ -20,22 +20,18 @@ int main(void)
 	int s;
 	int c;
 
-	for (s = 0; s < 9; s++)
+	for (s = '0'; s < '9'; s++)
 	{
-		for (c = s + 1; c < 10; c++)
+		for (c = s + 1; c <= '9'; c++)
 		{
 			if (s != c)
 			{
-				putchar(s + '0');
-				putchar(c + '0');
+				putchar(s);
+				putchar(c);
 				if (s == '8' && c == '9')
-				{
-					continue;
-				} else
-				{
-					putchar(',');
-					putchar(' ');
-				}
+				continue;
+				putchar(',');
+				putchar(' ');
 			}
 		}
 	}
