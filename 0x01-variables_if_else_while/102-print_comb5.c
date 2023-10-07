@@ -26,7 +26,7 @@ int main(void)
 			putchar((s / 10) + '0');
 			putchar((s % 10) + '0');
 			putchar (' ');
-			putchar(c / 10) + '0');
+			putchar((c / 10) + '0');
 			putchar((c % 10) + '0');
 
 			if (s != 98 || c != 99)
