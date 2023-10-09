@@ -15,28 +15,28 @@
  */
 int main(void)
 {
-	int s = 0;
-	int c;
+	int a = 0;
+	int b;
 
-	while (s <= 99)
+	while (a <= 98)
 	{
-		c = s + 1;
-		while (c <= 99)
+		b = a + 1;
+		while (b <= 99)
 		{
-			putchar((s / 10) + '0');
-			putchar((s % 10) + '0');
+			putchar((a / 10) + '0');
+			putchar((a % 10) + '0');
 			putchar (' ');
-			putchar((c / 10) + '0');
-			putchar((c % 10) + '0');
+			putchar((b / 10) + '0');
+			putchar((b % 10) + '0');
 
-			if (s != 98 || c != 99)
+			if (a != 98 || b != 99)
 			{
 				putchar(',');
 				putchar(' ');
 			}
-			++c;
+			++b;
 		}
-		++s;
+		++a;
 	}
 
 	putchar('\n');
