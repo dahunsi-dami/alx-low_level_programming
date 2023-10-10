@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <string.h>
 /**
  * main - Entry point
  *
@@ -11,8 +11,15 @@
 int main(void)
 {
 	char *a = "_putchar";
+	int length;
+	int i;
 
-	putchar(a);
+	length = strlen(a);
+
+	for (i = 0; i <= length; i++)
+	{
+		putchar(a[i]);
+	}
 	putchar('\n');
 
 	return (0);
