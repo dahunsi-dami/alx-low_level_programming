@@ -14,23 +14,21 @@ int main(void)
 	int i;
 	unsigned long sum;
 
-	printf("%lu, ", a);
-	printf("%lu, ", b);
+	printf("%lu, %lu, ", a, b);
 
-	for (i = 0; i <= 5; i++)
+	for (i = 0; i <= 95; i++)
 	{
-		if (i == 5)
+		sum = a + b;
+		if (i == 95)
 		{
-			sum = a + b;
 			printf("%lu", sum);
 		}
 		else
 		{
-			sum = a + b;
 			printf("%lu, ", sum);
-			a = b;
-			b = sum;
 		}
+		a = b;
+		b = sum;
 	}
 	printf("\n");
 	return (0);
