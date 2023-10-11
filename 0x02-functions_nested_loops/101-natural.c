@@ -10,7 +10,7 @@
 int main(void)
 {
 	int a = 0;
-	int sum = 0;
+	int sum;
 
 	while (a < 1024)
 	{
@@ -21,6 +21,6 @@ int main(void)
 		}
 		++a;
 	}
-	printf("%d", sum);
+	printf("%d\n", sum);
 	return (0);
 }
