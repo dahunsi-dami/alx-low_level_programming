@@ -17,9 +17,9 @@ int main(void)
 	printf("%lu, ", a);
 	printf("%lu, ", b);
 
-	for (i = 0; i <= 13; i++)
+	for (i = 0; i <= 95; i++)
 	{
-		if (i == 13)
+		if (i == 95)
 		{
 			sum = a + b;
 			printf("%lu", sum);
