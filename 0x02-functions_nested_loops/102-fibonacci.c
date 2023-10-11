@@ -9,25 +9,25 @@
 
 int main(void)
 {
-	int a = 1;
-	int b = 2;
+	long a = 1;
+	long b = 2;
 	int i;
-	int sum;
+	long sum;
 
-	printf("%d, ", a);
-	printf("%d, ", b);
+	printf("%ld, ", a);
+	printf("%ld, ", b);
 
 	for (i = 0; i <= 47; i++)
 	{
 		if (i == 47)
 		{
 			sum = a + b;
-			printf("%d", sum);
+			printf("%ld", sum);
 		}
 		else
 		{
 			sum = a + b;
-			printf("%d, ", sum);
+			printf("%ld, ", sum);
 			a = b;
 			b = sum;
 		}
