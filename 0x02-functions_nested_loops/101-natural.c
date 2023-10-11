@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * main - sums multiples of 3 and 5 below 1024
@@ -18,7 +19,7 @@ int main(void)
 			sum += a;
 			break;
 		}
-		a++
+		a++;
 	}
 	printf("%d", sum);
 	return (0);
