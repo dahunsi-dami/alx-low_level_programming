@@ -18,13 +18,9 @@ int main(void)
 		{
 			printf("Fizz ");
 		}
-		else if (((a % 5 == 0) || (a % 5 == 0)) && a != 99)
+		else if ((a % 5 == 0) || (a % 5 == 0))
 		{
 			printf("Buzz ");
-		}
-		else if (((a % 5 == 0) || (a % 5 == 0)) && a == 99)
-		{
-			printf("Buzz");
 		}
 		else
 		{
