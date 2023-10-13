@@ -3,28 +3,39 @@
 
 /**
  * main - prints largest prime factor of 612852475143 followed by new line
+ * @n: integer to be factorized
  * Return: always 0 (success)
  */
 
-int main(void)
+int high_prime(long n)
 {
-	int y, x;
+	long hiprm = -1, n, prnum, num;
 
-	if (size <= 0)
+	while (n % 2 == 0)
 	{
-		_putchar('\n');
-	} else
+		hiprm = 2;
+
+		n /= 2;
+	}
+
+	for (prnum = 3; prnum * prnum <= n; prnum += 2)
 	{
-		for (y = 1; y <= size; y++)
+		while (n % prnum == 0)
 		{
-			for (x = 1; x <= size; x++)
-			{
-				if ((x + y) <= size)
-					_putchar(' ');
-				else
-					_putchar('#');
-			}
-			_putchar('\n');
+			hiprm = prnum;
+
+			n /= prnum;
 		}
 	}
+
+	if (n > 2)
+	{
+		hiprm = n;
+	}
+
+	num = 612852475143;
+
+	printf("%ld\n", high_prime(num));
+
+	return (0);
 }
