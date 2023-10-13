@@ -2,14 +2,16 @@
 #include <stdio.h>
 
 /**
- * main - prints largest prime factor of 612852475143 followed by new line
- * @n: integer to be factorized
+ * high_prime  - prints largest prime factor of 612852475143
+ * followed by new line
  * Return: always 0 (success)
  */
 
-int high_prime(long n)
+long high_prime(void)
 {
-	long hiprm = -1, n, prnum, num;
+	long hiprm = -1;
+	long n = 612852475143;
+	long prnum;
 
 	while (n % 2 == 0)
 	{
@@ -33,9 +35,13 @@ int high_prime(long n)
 		hiprm = n;
 	}
 
-	num = 612852475143;
+	return (hiprm);
+}
 
-	printf("%ld\n", high_prime(num));
+int main(void)
+{
+
+	printf("%ld\n", high_prime());
 
 	return (0);
 }
