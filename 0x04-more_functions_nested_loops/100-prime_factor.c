@@ -37,6 +37,6 @@ int main(void)
 	}
 
 	printf("%ld\n", hiprm);
-	
+
 	return (0);
 }
