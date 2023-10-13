@@ -2,12 +2,13 @@
 #include <stdio.h>
 
 /**
- * high_prime  - prints largest prime factor of 612852475143
+ * main  - prints largest prime factor of 612852475143
  * followed by new line
+ *
  * Return: always 0 (success)
  */
 
-long high_prime(void)
+int main(void)
 {
 	long hiprm = -1;
 	long n = 612852475143;
@@ -35,13 +36,7 @@ long high_prime(void)
 		hiprm = n;
 	}
 
-	return (hiprm);
-}
-
-int main(void)
-{
-
-	printf("%ld\n", high_prime());
-
+	printf("%ld\n", hiprm);
+	
 	return (0);
 }
