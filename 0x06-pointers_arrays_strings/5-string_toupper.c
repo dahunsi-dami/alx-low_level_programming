@@ -3,7 +3,7 @@
 /**
  * *string_toupper - changes all lowcase letters of string to upcase.
  * @str: the string whose lowcase will be switched to upcase.
- * Return: always 0 (success).
+ * Return: return changed string.
  */
 
 char *string_toupper(char *str)
