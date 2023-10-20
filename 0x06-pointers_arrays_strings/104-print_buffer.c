@@ -8,7 +8,7 @@
  */
 void print_buffer(char *b, int size)
 {
-	int a, e, c;
+	int a, c;
 
 	a = 0;
 
@@ -17,27 +17,27 @@ void print_buffer(char *b, int size)
 		printf("\n");
 		return;
 	}
-
 	while (a < size)
 	{
-		e = size - a < 10 ? size - a : 10;
+		int e = (size - a < 10) ? size - a : 10;
+
 		printf("%08x: ", a);
-		for (c = 0; c < 10; c++)
+
+		for (c = 0; c < e; c++)
 		{
-			if (c < e)
-				printf("%02x", *(b + a + c));
-			else
-				printf(" ");
+			printf("%02x", *(b + a + c));
 			if (c % 2)
 			{
 				printf(" ");
 			}
 		}
+		for (c = 0; c < 10 - e; c++)
+			printf("   ");
 		for (c = 0; c < e; c++)
 		{
-			int d = *(b + a + c);
+			char d = *(b + a + c);
 
-			if (d < 32 || d > 132)
+			if (d < 32 || d > 126)
 			{
 				d = '.';
 			}
