@@ -4,11 +4,13 @@
  * print_buffer - prints a buffer.
  * @b: pointer to buffer (character array) to be printed.
  * @size: number of bytes of buffer to be printed.
- * Return: pointer to the result stored in r or 0.
+ * Return: unecessary as function type is void.
  */
 void print_buffer(char *b, int size)
 {
-	int a = 0, e, c;
+	int a, e, c;
+
+	a = 0;
 
 	if (size <= 0)
 	{
@@ -21,7 +23,6 @@ void print_buffer(char *b, int size)
 		e = size - a < 10 ? size - a : 10;
 
 		printf("%08x: ", a);
-
 		for (c = 0; c < 10; c++)
 		{
 			if (c < e)
@@ -38,8 +39,9 @@ void print_buffer(char *b, int size)
 			int d = *(b + a + c);
 
 			if (d < 32 || d > 132)
+			{
 				d = '.';
-
+			}
 			printf("%c", d);
 		}
 		printf("\n");
