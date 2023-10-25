@@ -21,7 +21,12 @@ int _sqrt_recursion(int n)
 
 	return (sqrt_recurse(n, 0));
 }
-
+/**
+ * sqrt_recurse - calculates natural square root recursively.
+ * @n: the number whose natural square root should be calculated.
+ * @sqr: the integer guess for the square root
+ * Return: square root if found, else -1.
+ */
 int sqrt_recurse(int n, int sqr)
 {
 	if (sqr * sqr == n)
