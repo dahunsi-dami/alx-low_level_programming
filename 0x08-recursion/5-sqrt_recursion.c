@@ -24,15 +24,15 @@ int _sqrt_recursion(int n)
 
 int sqrt_recurse(int n, int sqr)
 {
-        if (sqr * sqr == n)
-        {
-                return (sqr);
-        }
+	if (sqr * sqr == n)
+	{
+	return (sqr);
+	}
 
-        if (sqr * sqr > n)
-        {
-                return (-1);
-        }
+	if (sqr * sqr > n)
+	{
+	return (-1);
+	}
 
-        return (sqrt_recurse(n, sqr + 1));
+	return (sqrt_recurse(n, sqr + 1));
 }
