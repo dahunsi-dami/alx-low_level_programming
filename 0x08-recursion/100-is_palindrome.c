@@ -33,7 +33,7 @@ int checker(char *c, int c1, int c2)
 	{
 		return (1);
 	}
-	
+
 	if (c[c1] != c[c2])
 	{
 		return (0);
