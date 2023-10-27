@@ -1,20 +1,6 @@
 #include <stdio.h>
 #include "main.h"
 
-#include <unistd.h>
-
-/**
- * _putchar - prints given character c to stdout of 1.
- *
- * @c: character to be printed
- *
- * Return: returns 1 if successful and -1 if error's encountered
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-
 /**
  * main - prints name of program followed by new line.
  * @argc: number of arguments, including program name.
@@ -24,16 +10,12 @@ int _putchar(char c)
  */
 int main(int argc, char *argv[])
 {
-	int i, j;
+	int i;
 
 	for (i = 0; i < argc; i++)
 	{
-		for (j = 0; argv[i][j] != '\0'; j++)
-		{
-			_putchar(argv[i][j]);
-		}
+		printf("%s\n", argv[i]);
 	}
-	_putchar('\n');
 
 	return (0);
 }
