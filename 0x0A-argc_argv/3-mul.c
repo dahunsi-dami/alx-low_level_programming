@@ -15,7 +15,7 @@ int _putchar(char c)
 }
 
 /**
- * main - prints all arguments it gets.
+ * main - prints number of arguments minus program name.
  * @argc: number of arguments, including program name.
  * @argv: 1D array of arguments passed.
  *
