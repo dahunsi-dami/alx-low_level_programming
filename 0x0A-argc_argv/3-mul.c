@@ -1,21 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
-#include <unistd.h>
 
 /**
- * _putchar - prints given character c to stdout of 1.
- *
- * @c: character to be printed
- *
- * Return: returns 1 if successful and -1 if error's encountered
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-
-/**
- * main - prints number of arguments minus program name.
+ * main - prints product of two arguments after 1st arg.
  * @argc: number of arguments, including program name.
  * @argv: 1D array of arguments passed.
  *
@@ -23,15 +11,23 @@ int _putchar(char c)
  */
 int main(int argc, char *argv[])
 {
-	int i, j;
+	int i, mult = 1;
 
-	for (i = 0; i < argc; i++)
+	if (argc > 1)
 	{
-		for (j = 0; argv[i][j] != '\0'; j++)
+		for (i = 1; i < argc; i++)
 		{
-			_putchar(argv[i][j]);
+			int num = atoi(argv[i]);
+
+			mult *= num;
 		}
-		_putchar('\n');
+
+		printf("%d\n", mult);
+	}
+	else
+	{
+		printf("Error\n");
+		return (1);
 	}
 
 	return (0);
