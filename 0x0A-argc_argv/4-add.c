@@ -11,23 +11,29 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, sum = 0;
+	int i, j, n, sum = 0;
 
 	if (argc > 1)
 	{
 		for (i = 1; i < argc; i++)
 		{
-			int num = atoi(argv[i]);
+			char *nstr = argv[i];
 
-			if (num != 0 && num > 0)
+			for (j = 0; nstr[j] != '\0'; j++)
 			{
-				sum += num;
+				if (nstr[j] >= '0' && nstr[j] <= '9')
+				{
+					continue;
+				}
+				else
+				{
+					printf("Error\n");
+					return (1);
+				}
 			}
-			else
-			{
-				printf("Error\n");
-				return (1);
-			}
+
+			n = atoi(nstr);
+			sum += n;
 		}
 
 		printf("%d\n", sum);
