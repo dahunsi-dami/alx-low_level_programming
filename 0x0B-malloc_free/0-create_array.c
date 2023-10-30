@@ -12,30 +12,27 @@
  */
 char *create_array(unsigned int size, char c)
 {
+	char *ar;
 	unsigned int i;
 
 	if (size == 0)
 	{
 		return (NULL);
 	}
+
+	ar = malloc(sizeof(ar) * size);
+
+	for (i = 0; i < size; i++)
+	{
+		ar[i] = c;
+	}
+
+	if (ar == NULL)
+	{
+		return (NULL);
+	}
 	else
 	{
-		char *ar;
-
-		ar = malloc(sizeof(ar) * size);
-
-		for (i = 0; i < size; i++)
-		{
-			ar[i] = c;
-		}
-
-		if (ar == NULL)
-		{
-			return (NULL);
-		}
-		else
-		{
-			return (ar);
-		}
+		return (ar);
 	}
 }
