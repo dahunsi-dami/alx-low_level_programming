@@ -20,12 +20,7 @@ char *create_array(unsigned int size, char c)
 		return (NULL);
 	}
 
-	ar = malloc(sizeof(ar) * size);
-
-	for (i = 0; i < size; i++)
-	{
-		ar[i] = c;
-	}
+	ar = malloc(sizeof(char) * size);
 
 	if (ar == NULL)
 	{
@@ -33,6 +28,11 @@ char *create_array(unsigned int size, char c)
 	}
 	else
 	{
+		for (i = 0; i < size; i++)
+		{
+			ar[i] = c;
+		}
+
 		return (ar);
 	}
 }
