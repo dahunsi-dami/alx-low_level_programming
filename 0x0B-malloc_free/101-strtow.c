@@ -21,7 +21,6 @@ char **strtow(char *str)
 			worder++;
 	}
 	nstrg = malloc(sizeof(char *) * (worder + 1));
-
 	if (nstrg == NULL)
 		return (NULL);
 	for (i = 0, j = 0; i < worder; i++)
@@ -33,7 +32,6 @@ char **strtow(char *str)
 		while (str[j + word_len] != ' ' && str[j + word_len] != '\0')
 			word_len++;
 		nstrg[i] = malloc((word_len + 1) * sizeof(char));
-
 		if (nstrg[i] == NULL)
 		{
 			for (k = 0; k < i; k++)
@@ -44,7 +42,7 @@ char **strtow(char *str)
 		for (k = 0; k < word_len; k++)
 			nstrg[i][k] = str[j + k];
 		nstrg[i][k] = '\0';
-		
+
 		j += word_len;
 	}
 	nstrg[i] = NULL;
