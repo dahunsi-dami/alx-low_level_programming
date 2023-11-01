@@ -1,5 +1,3 @@
-#include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 /**
@@ -17,8 +15,16 @@ char **strtow(char *str)
 		return (NULL);
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (str[i] == ' ' && (i == 0 || str[i - 1] != ' '))
+		if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
 			worder++;
+	}
+	if (worder == 0)
+	{
+		nstrg = malloc(sizeof(char *));
+		if (nstrg == NULL)
+			return (NULL);
+		nstrg[0] = NULL;
+		return (nstrg);
 	}
 	nstrg = malloc(sizeof(char *) * (worder + 1));
 	if (nstrg == NULL)
