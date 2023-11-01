@@ -11,40 +11,43 @@
 char **strtow(char *str)
 {
 	char **nstrg;
-	int i, j, k, l, m, char_len, worder = 0;
+	int i, j, k, word_len = 0, worder = 0;
 
-	if (str == NULL || strcmp( str, "") == 0)
+	if (str == NULL || strcmp(str, "") == 0)
 		return (NULL);
-
-	for (i = 0; str[i] != ' ' && str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		i++;
-	}
-
-	char_len = i + 2;
-
-	for (j = 0; str[j] != '\0'; j++)
-	{
-		if (str[j] == ' ' && str[j + 1] != ' ')
-		{
+		if (str[i] == ' ' && (i == 0 || str[i - 1] != ' '))
 			worder++;
-		}
 	}
-
-	nstrg = malloc(sizeof(char) * char_len);
+	nstrg = malloc(sizeof(char *) * (worder + 1));
 
 	if (nstrg == NULL)
 		return (NULL);
-
-	for (k = 0, l = 0; k < worder; k++)
+	for (i = 0, j = 0; i < worder; i++)
 	{
-		for (m = 0; str[m] != ' ' && str[m + 1] == ' '; m++)
+		while (str[j] == ' ')
+			j++;
+		word_len = 0;
+
+		while (str[j + word_len] != ' ' && str[j + word_len] != '\0')
+			word_len++;
+		nstrg[i] = malloc((word_len + 1) * sizeof(char));
+
+		if (nstrg[i] == NULL)
 		{
-			nstrg[l++] = str[m];
+			for (k = 0; k < i; k++)
+				free(nstrg[k]);
+			free(nstrg);
+			return (NULL);
 		}
-		nstrg[l++] = '\0';
-		nstrg[l++] = '\n';
+		for (k = 0; k < word_len; k++)
+			nstrg[i][k] = str[j + k];
+		nstrg[i][k] = '\0';
+		
+		j += word_len;
 	}
+	nstrg[i] = NULL;
 
 	return (nstrg);
 }
