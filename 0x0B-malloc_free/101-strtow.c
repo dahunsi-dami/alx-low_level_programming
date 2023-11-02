@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <string.h>
 /**
  * wordcounter - function that counts number of words in string
  * @str: the string that has the words in it.
@@ -22,7 +23,6 @@ int wordcounter(char *str)
 	}
 	return (w);
 }
-
 /**
  * release_array - function that frees all dynamically alloc arrays.
  * @arry: the array to be released.
@@ -42,7 +42,6 @@ void release_array(char **arry, int i)
 		free(arry);
 	}
 }
-
 /**
  * strtow - prints space-separated strings into words.
  * @str: the string to be splitted.
@@ -54,10 +53,9 @@ char **strtow(char *str)
 	char **nstrg;
 	int i, j, k, wc, wi;
 
-	if (str == NULL || *str == '\0')
+	if (str == NULL || *str == '\0' || strcmp(str, "") == 0)
 		return (NULL);
 	wc = wordcounter(str);
-
 	nstrg = malloc(sizeof(char *) * (wc + 1));
 	if (nstrg == NULL || wc == 0)
 		return (NULL);
@@ -79,12 +77,10 @@ char **strtow(char *str)
 				break;
 			}
 		}
-
 		for (k = 0; j <=  wi; j++, k++)
 			nstrg[i][k] = str[j];
 		nstrg[i][k] = '\0';
 	}
 	nstrg[i] = NULL;
-
 	return (nstrg);
 }
