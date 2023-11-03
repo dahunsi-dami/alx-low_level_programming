@@ -22,8 +22,6 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	for (i = 0; i < nmemb * size; i++)
 		nstrg[i] = 0;
 
-	nstrg[i] = '\0';
-
 	return (nstrg);
 
 }
