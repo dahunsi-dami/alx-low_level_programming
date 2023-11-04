@@ -97,5 +97,5 @@ int main(int argc, char *argv[])
 		_putchar('0');
 	_putchar('\n');
 	free(prod);
-	return(0);
+	return (0);
 }
