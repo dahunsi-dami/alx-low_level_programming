@@ -15,12 +15,7 @@ int all_digits(char *p)
 	{
 		if ((p[i] < '0' || p[i] > '9'))
 		{
-			_putchar('E');
-			_putchar('r');
-			_putchar('r');
-			_putchar('o');
-			_putchar('r');
-			exit(98);
+			return (0));
 		}
 		i++;
 	}
