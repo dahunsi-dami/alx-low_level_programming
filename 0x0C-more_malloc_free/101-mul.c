@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
 		err();
 	len = leno + lent + 1;
 	prod = malloc(sizeof(int) * len);
-	if (prod == NULL)
+	if (!prod)
 		return (1);
 	for (i = 0; i <= leno + lent; i++)
 		prod[i] = 0;
