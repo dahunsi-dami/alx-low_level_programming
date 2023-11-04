@@ -14,7 +14,14 @@ int all_digits(char *p)
 	while (p[i])
 	{
 		if ((p[i] < '0' || p[i] > '9'))
-			return (0);
+		{
+			_putchar('E');
+			_putchar('r');
+			_putchar('r');
+			_putchar('o');
+			_putchar('r');
+			exit(98);
+		}
 		i++;
 	}
 	return (1);
