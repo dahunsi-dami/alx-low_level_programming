@@ -15,7 +15,7 @@ int all_digits(char *p)
 	{
 		if ((p[i] < '0' || p[i] > '9'))
 		{
-			return (0));
+			return (0);
 		}
 		i++;
 	}
