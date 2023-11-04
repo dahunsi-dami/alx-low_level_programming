@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
 	int leno = _strlen(v1), lent = _strlen(v2), len, *prod, i, d1, d2;
 	int carry = 0, j = 0;
 
-	if (argc != 3 || argc > 3 || !all_digits(v1) || !all_digits(v2))
+	if (argc != 3 || !all_digits(v1) || !all_digits(v2))
 		err();
 	len = leno + lent + 1;
 	prod = malloc(sizeof(int) * len);
