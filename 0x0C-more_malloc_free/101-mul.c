@@ -9,14 +9,12 @@
  */
 int all_digits(char *p)
 {
-	unsigned int i = 0;
+	int i = 0;
 
-	while (p[i] != '\0')
+	while (p[i])
 	{
-		if (!(p[i] >= '0' && p[i] <= '9'))
-		{
+		if ((p[i] < '0' || p[i] > '9'))
 			return (0);
-		}
 		i++;
 	}
 	return (1);
@@ -44,7 +42,7 @@ void err(void)
  */
 int _strlen(char *p)
 {
-	unsigned int i = 0;
+	int i = 0;
 
 	while (p[i] != '\0')
 	{
@@ -63,33 +61,32 @@ int _strlen(char *p)
 int main(int argc, char *argv[])
 {
 	char *v1 = argv[1], *v2 = argv[2];
-	int leno = _strlen(v1), lent = _strlen(v2), len, *prod, i, d1, d2, j;
-	int carry = 0;
+	int leno = _strlen(v1), lent = _strlen(v2), len, *prod, i, d1, d2;
+	int carry = 0, j = 0;
 
 	if (argc != 3 || argc > 3 || !all_digits(v1) || !all_digits(v2))
 		err();
-	len = leno + lent;
-	prod = malloc(sizeof(int) * (len + 1));
+	len = leno + lent + 1;
+	prod = malloc(sizeof(int) * len);
 	if (prod == NULL)
 		return (1);
-	for (i = 0; i <= len; i++)
+	for (i = 0; i <= leno + lent; i++)
 		prod[i] = 0;
-	for (i = leno - 1; i >= 0; i--)
+	for (leno = leno - 1; leno >= 0; leno--)
 	{
-		d1 = v1[i] - '0';
+		d1 = v1[leno] - '0';
 		carry = 0;
-		for (j = lent - 1; j >= 0; j--)
+		for (lent = _strlen(v2) - 1; lent >= 0; lent--)
 		{
-			d2 = v2[j] - '0';
-			carry += prod[i + j + 1] + (d1 * d2);
-			prod[i + j + 1] = carry % 10;
-			carry = prod[i + j] / 10;
+			d2 = v2[lent] - '0';
+			carry += prod[leno + lent + 1] + (d1 * d2);
+			prod[leno + lent + 1] = carry % 10;
 			carry /= 10;
 		}
-		prod[i + 1] += carry;
+		if (carry > 0)
+			prod[leno + lent + 1] += carry;
 	}
-	j = 0;
-	for (i = 0; i <= len; i++)
+	for (i = 0; i < len - 1; i++)
 	{
 		if (prod[i])
 			j = 1;
