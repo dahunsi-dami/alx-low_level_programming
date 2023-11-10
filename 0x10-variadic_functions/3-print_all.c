@@ -11,7 +11,6 @@ void print_all(const char * const format, ...)
 	char *sep = "", *s;
 
 	va_list types;
-
 	va_start(types, format);
 
 	if (format)
@@ -36,10 +35,9 @@ void print_all(const char * const format, ...)
 					printf("%s%s", sep, s);
 					break;
 				default:
-					i++;
-					continue;
+					break;
 			}
-			sep = ",";
+			sep = ", ";
 			i++;
 		}
 	}
