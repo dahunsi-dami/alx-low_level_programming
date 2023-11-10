@@ -11,35 +11,33 @@ void print_all(const char * const format, ...)
 	char *sep = "", *s;
 
 	va_list types;
+
 	va_start(types, format);
 
-	if (format)
+	while (format && format[i])
 	{
-		while (format[i])
+		switch (format[i])
 		{
-			switch (format[i])
-			{
-				case 'c':
-					printf("%s%c", sep, va_arg(types, int));
-					break;
-				case 'i':
-					printf("%s%d", sep, va_arg(types, int));
-					break;
-				case 'f':
-					printf("%s%f", sep, va_arg(types, double));
-					break;
-				case 's':
-					s = va_arg(types, char *);
-					if (s == NULL)
-						s = "(nil)";
-					printf("%s%s", sep, s);
-					break;
-				default:
-					break;
-			}
-			sep = ", ";
-			i++;
+			case 'c':
+				printf("%s%c", sep, va_arg(types, int));
+				break;
+			case 'i':
+				printf("%s%d", sep, va_arg(types, int));
+				break;
+			case 'f':
+				printf("%s%f", sep, va_arg(types, double));
+				break;
+			case 's':
+				s = va_arg(types, char *);
+				if (s == NULL)
+					s = "(nil)";
+				printf("%s%s", sep, s);
+				break;
+			default:
+				break;
 		}
+		sep = ", ";
+		i++;
 	}
 	printf("\n");
 	va_end(types);
