@@ -30,12 +30,13 @@ int main(int argc, char *argv[])
 
 	for (i = 0; i < numbyte; i++)
 	{
-		if (i == --numbyte)
+		printf("%02x", ar[i] & 0xFF);
+		if (i != numbyte - 1)
 		{
-			printf("%02hhx\n", ar[i]);
-			break;
+			printf(" ");
 		}
-		printf("%02hhx", ar[i]);
 	}
+	printf("\n");
+
 	return (0);
 }
