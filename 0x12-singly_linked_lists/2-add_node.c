@@ -40,7 +40,7 @@ list_t *add_node(list_t **head, const char *str)
 
 	*head = newnode;
 
-	if (newnode->str != strg && newnode->len != length)
+	if (*head != newnode)
 		return (NULL);
-	return (*head);
+	return (newnode);
 }
