@@ -40,12 +40,10 @@ list_t *add_node(list_t **head, const char *str)
 
 	*head = newnode;
 
-	temp = (list_t *)malloc(sizeof(list_t));
-
-	temp = *head;
-
-	if (temp != newnode || temp->str != strg)
+	if (!(*head == newnode))
+	{
 		return (NULL);
+	}
 
-	return (newnode);
+return (newnode);
 }
