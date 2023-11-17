@@ -10,8 +10,6 @@ size_t print_list(const list_t *h)
 	const list_t *temp;
 	unsigned int count = 0;
 
-	temp = (list_t *)malloc(sizeof(list_t));
-
 	temp = h;
 
 	while (temp != 0)
