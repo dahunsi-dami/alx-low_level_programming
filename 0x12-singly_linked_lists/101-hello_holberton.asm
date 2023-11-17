@@ -1,17 +1,44 @@
-section .data
-	message db "Hello, Holberton", 10, 0	; newline and null terminator
-
-section .text
-	global main	; entry point for c-compiler
-	extern printf	; will be borrowed from c-library
-			; printf(char* format, data)
-			; printf(rdi, rsi)
-
+	.file	"101-hello_holberton.c"
+	.text
+	.section	.rodata
+.LC0:
+	.string	"Hello, Holberton"
+	.text
+	.globl	main
+	.type	main, @function
 main:
-	mov rdi, message	; the format is the message
-	xor rax, rax		; clear the RAX register for no SSE regs used
-	call printf
-
-	mov rax, 60		; system call for exit
-	xor rdi, rdi		; exit code 0
-	syscall			; invoke operating system to exit
+.LFB0:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	leaq	.LC0(%rip), %rdi
+	call	puts@PLT
+	movl	$0, %eax
+	popq	%rbp
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE0:
+	.size	main, .-main
+	.ident	"GCC: (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	 1f - 0f
+	.long	 4f - 1f
+	.long	 5
+0:
+	.string	 "GNU"
+1:
+	.align 8
+	.long	 0xc0000002
+	.long	 3f - 2f
+2:
+	.long	 0x3
+3:
+	.align 8
+4:
