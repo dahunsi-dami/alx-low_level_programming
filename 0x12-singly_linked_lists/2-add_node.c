@@ -32,6 +32,8 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 
 	strg = strdup(str);
+	if (strg == NULL)
+		return (NULL);
 	length = _strlen(strg);
 
 	newnode->str = strg;
@@ -40,10 +42,5 @@ list_t *add_node(list_t **head, const char *str)
 
 	*head = newnode;
 
-	if (!(*head == newnode))
-	{
-		return (NULL);
-	}
-
-return (newnode);
+	return (newnode);
 }
