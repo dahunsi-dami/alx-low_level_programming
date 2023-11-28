@@ -10,8 +10,8 @@
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	unsigned int i = 0;
-	listint_t *newnode = NULL;
-	listint_t *backnode = NULL;
+	listint_t *newnode;
+	listint_t *backnode;
 	listint_t *nextnode = *head;
 
 	while (nextnode)
