@@ -8,6 +8,9 @@ void free_dlistint(dlistint_t *head)
 {
 	dlistint_t *temp;
 
+	if (head == NULL)
+		exit(EXIT_FAILURE);
+
 	temp = head;
 
 	while (head->next != NULL)
