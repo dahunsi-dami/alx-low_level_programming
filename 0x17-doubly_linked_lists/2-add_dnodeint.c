@@ -15,9 +15,15 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 		return (NULL);
 	temp = *head;
 	current->n = n;
-	current->next = temp;
 	if (*head == NULL)
+	{
+		current->prev = NULL;
+		current->next = NULL;
 		*head = current;
+		return (current);
+	}
+	current->next = temp;
+	(*head)->prev = current;
 	*head = current;
 
 	return (current);
